@@ -18,7 +18,7 @@ setup(
     # How you named your package folder (MyLib)
     name='TOPSIS_Prakhar_101803126',
     packages=['TOPSIS_Prakhar_101803126'],   # Chose the same as "name"
-    version='2.1',      # Start with a small number and increase it with every change you make
+    version='2.2',      # Start with a small number and increase it with every change you make
     # Chose a license from here: https://help.github.com/articles/licensing-a-repository
     license='MIT',
     # Give a short description about your library
@@ -29,7 +29,7 @@ setup(
     # Provide either the link to your github or to your website
     url='https://github.com/PrakharJindal/Topsis-Pypi-Package',
     # I explain this later on
-    download_url='https://github.com/PrakharJindal/Topsis-Pypi-Package/archive/v2.1.tar.gz',
+    download_url='https://github.com/PrakharJindal/Topsis-Pypi-Package/archive/v2.2.tar.gz',
     # Keywords that define your package best
     keywords=['Topsis', 'Topsis Ranking'],
     install_requires=[            # I get to this in a second
