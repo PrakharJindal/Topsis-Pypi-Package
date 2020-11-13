@@ -3,6 +3,7 @@
 import numpy as np
 import pandas as pd
 import os
+import sys
 
 rssRow = []
 
@@ -67,7 +68,6 @@ def CalculateTopsisScore(file, weight, impact):
         sys.exit()
     elif len(df.columns[1:]) != len(weight):
         print("No. Of weights on not equal to data size !")
-        # fread.close()
         sys.exit()
     elif len(df.columns[1:]) != len(impact):
         print("No. Of imapacts on not equal to data size !")
@@ -82,15 +82,6 @@ def CalculateTopsisScore(file, weight, impact):
         if a not in["float64", "int64"]:
             print("\nNon-Numeric data in csv file !")
             sys.exit()
-
-    if len(df.columns[1:]) != len(weight):
-        return {"error": True, "msg": "No. Of weights on not equal to data size !"}
-
-    elif len(df.columns[1:]) != len(impact):
-        return {"error": True, "msg": "No. Of imapacts on not equal to data size !"}
-
-    elif len(df.columns[1:]) < 3:
-        return {"error": True, "msg": "Input File must have More than 3 columns !"}
 
     df.iloc[:, 1:].apply(func=rss, axis=0)
 
