@@ -40,6 +40,7 @@ def CalculateTopsisScore(file, weight, impact):
     outputName = ".".join(file.split(".")[:-1])
 
     df = pd.read_csv("media/{}".format(file))
+    df_original = pd.read_csv("media/{}".format(file))
 
     if len(df.columns[1:]) != len(weight):
         return {"error": True, "msg": "No. Of weights on not equal to data size !"}
@@ -71,9 +72,8 @@ def CalculateTopsisScore(file, weight, impact):
     best_dist_df = pd.DataFrame(
         performance, columns=["Topsis Score"])
 
-    df = pd.concat([df, best_dist_df], axis=1)
+    df_original = pd.concat([df_original, best_dist_df], axis=1)
 
-    df['Rank'] = df['Topsis Score'].rank(ascending=0)
+    df_original['Rank'] = df_original['Topsis Score'].rank(ascending=0)
 
-    df.to_csv("media/{}-Output.csv".format(outputName))
-    return("media/{}-Output.csv".format(outputName))
+    df_original.to_csv("media/{}-Output.csv".format(outputName))
