@@ -41,10 +41,11 @@ def CalculateTopsisScore(file, weight, impact):
     outputName = ".".join(file.split(".")[:-1])
     impact = [x.strip() for x in impact.split(",")]
     weight = [x.strip() for x in weight.split(",")]
-    
+
     df = pd.read_csv(file)
     df_original = pd.read_csv(file)
-
+    print("Original Data")
+    print(df.head())
     for i, w in enumerate(weight):
         try:
             weight[i] = float(w)
@@ -110,4 +111,8 @@ def CalculateTopsisScore(file, weight, impact):
 
     df_original['Rank'] = df_original['Topsis Score'].rank(ascending=0)
 
+    print("Final Data")
+    print(df.head())
+
+    print("\n\nOutput Saved as {}-Output.csv".format(outputName))
     df_original.to_csv("{}-Output.csv".format(outputName))

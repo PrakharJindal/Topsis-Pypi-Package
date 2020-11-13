@@ -5,7 +5,10 @@ A Pypi Package To calculate Topsis Score and Ranking on a given CSV File
 
 Eg. 
 from TOPSIS_Prakhar_101803126.topsis import CalculateTopsisScore
-CalculateTopsisScore("./topsis_data.csv", "1,1,1,2", "+,+,-,+")
+filename = "testData.csv"
+weight = "1,1,1,2"
+impact = "+,+,-,+"
+CalculateTopsisScore(filename, weight, impact )
 
 Note : 
     1. The package Shoud Contain All Non Categorical data 
@@ -15,7 +18,7 @@ setup(
     # How you named your package folder (MyLib)
     name='TOPSIS_Prakhar_101803126',
     packages=['TOPSIS_Prakhar_101803126'],   # Chose the same as "name"
-    version='1.8',      # Start with a small number and increase it with every change you make
+    version='2.0',      # Start with a small number and increase it with every change you make
     # Chose a license from here: https://help.github.com/articles/licensing-a-repository
     license='MIT',
     # Give a short description about your library
@@ -26,7 +29,7 @@ setup(
     # Provide either the link to your github or to your website
     url='https://github.com/PrakharJindal/Topsis-Pypi-Package',
     # I explain this later on
-    download_url='https://github.com/PrakharJindal/Topsis-Pypi-Package/archive/v1.8.tar.gz',
+    download_url='https://github.com/PrakharJindal/Topsis-Pypi-Package/archive/v2.0.tar.gz',
     # Keywords that define your package best
     keywords=['Topsis', 'Topsis Ranking'],
     install_requires=[            # I get to this in a second
