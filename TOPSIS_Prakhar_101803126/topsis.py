@@ -39,7 +39,9 @@ def euclidean_distance(val):
 
 def CalculateTopsisScore(file, weight, impact):
     outputName = ".".join(file.split(".")[:-1])
-
+    impact = [x.strip() for x in impact.split(",")]
+    weight = [x.strip() for x in weight.split(",")]
+    
     df = pd.read_csv(file)
     df_original = pd.read_csv(file)
 
