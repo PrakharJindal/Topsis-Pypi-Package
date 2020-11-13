@@ -14,9 +14,9 @@ setup(
     author='Prakhar Jindal',                   # Type in your name
     author_email='iamprakharjindal@gmail.com',      # Type in your E-Mail
     # Provide either the link to your github or to your website
-    url='https://github.com/PrakharJindal',
+    url='github.com/PrakharJindal/Topsis-Pypi-Package',
     # I explain this later on
-    download_url='https://github.com/user/reponame/archive/v_01.tar.gz',
+    download_url='https://github.com/PrakharJindal/Topsis-Pypi-Package/archive/v_01.tar.gz',
     # Keywords that define your package best
     keywords=['Topsis', 'Topsis Ranking'],
     install_requires=[            # I get to this in a second
