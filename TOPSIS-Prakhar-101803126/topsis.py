@@ -2,7 +2,7 @@
 
 import numpy as np
 import pandas as pd
-
+import os
 
 rssRow = []
 
@@ -39,8 +39,49 @@ def euclidean_distance(val):
 def CalculateTopsisScore(file, weight, impact):
     outputName = ".".join(file.split(".")[:-1])
 
-    df = pd.read_csv("media/{}".format(file))
-    df_original = pd.read_csv("media/{}".format(file))
+    df = pd.read_csv(file)
+    df_original = pd.read_csv(file)
+
+    for i, w in enumerate(weight):
+        try:
+            weight[i] = float(w)
+            continue
+        except ValueError:
+
+            if not w.isnumeric():
+                print(w)
+                print("Weights of wrong fromat.")
+                sys.exit()
+            else:
+                weight[i] = int(w)
+    for i in impact:
+        if i not in ["+", "-"]:
+            print("Imapacts of wrong fromat.")
+            sys.exit()
+
+    # fread = open(file, "r")
+    df = pd.read_csv(file)
+
+    if file not in os.listdir():
+        print("File {} not found.".format(file))
+        sys.exit()
+    elif len(df.columns[1:]) != len(weight):
+        print("No. Of weights on not equal to data size !")
+        # fread.close()
+        sys.exit()
+    elif len(df.columns[1:]) != len(impact):
+        print("No. Of imapacts on not equal to data size !")
+        # fread.close()
+        sys.exit()
+    elif len(df.columns[1:]) < 3:
+        print("Input File must have More than 3 columns !")
+        # fread.close()
+        sys.exit()
+
+    for a in list(df.iloc[:, 1:].dtypes):
+        if a not in["float64", "int64"]:
+            print("\nNon-Numeric data in csv file !")
+            sys.exit()
 
     if len(df.columns[1:]) != len(weight):
         return {"error": True, "msg": "No. Of weights on not equal to data size !"}
