@@ -110,4 +110,4 @@ def CalculateTopsisScore(file, weight, impact):
 
     df_original['Rank'] = df_original['Topsis Score'].rank(ascending=0)
 
-    df_original.to_csv("media/{}-Output.csv".format(outputName))
+    df_original.to_csv("{}-Output.csv".format(outputName))
