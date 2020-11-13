@@ -8,19 +8,19 @@ setup(
     # How you named your package folder (MyLib)
     name='TOPSIS_Prakhar_101803126',
     packages=['TOPSIS_Prakhar_101803126'],   # Chose the same as "name"
-    version='1.5',      # Start with a small number and increase it with every change you make
+    version='1.6',      # Start with a small number and increase it with every change you make
     # Chose a license from here: https://help.github.com/articles/licensing-a-repository
     license='MIT',
     # Give a short description about your library
     description='Package To Calulate the Topsis score and ranking of a given CSV File ( with non-categorical data only ).',
-    long_description="",
+    long_description=long_description,
     long_description_content_type="text/markdown",
     author='Prakhar Jindal',                   # Type in your name
     author_email='iamprakharjindal@gmail.com',      # Type in your E-Mail
     # Provide either the link to your github or to your website
     url='https://github.com/PrakharJindal/Topsis-Pypi-Package',
     # I explain this later on
-    download_url='https://github.com/PrakharJindal/Topsis-Pypi-Package/archive/v1.5.tar.gz',
+    download_url='https://github.com/PrakharJindal/Topsis-Pypi-Package/archive/v1.6.tar.gz',
     # Keywords that define your package best
     keywords=['Topsis', 'Topsis Ranking'],
     install_requires=[            # I get to this in a second
